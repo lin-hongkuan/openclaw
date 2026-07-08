@@ -387,7 +387,17 @@ describe("gateway hot reload model state", () => {
             baseUrl: "https://api.anthropic.com/v1",
             apiKey: "${ANTHROPIC_API_KEY}",
             api: "anthropic-messages",
-            models: [{ id: "claude-opus-4-6" }],
+            models: [
+              {
+                id: "claude-opus-4-6",
+                name: "Claude Opus 4.6",
+                reasoning: true,
+                input: ["text"],
+                cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+                contextWindow: 200_000,
+                maxTokens: 8192,
+              },
+            ],
           },
         },
       },
